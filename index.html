@@ -7,32 +7,23 @@
     <title>pitch</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <a href="#" class="logo">pitch</a>
-    <input type="checkbox" id="menu-bar" />
-    <label for="menu-bar">Menu</label>
-    <nav class="navbar">
-      <ul>
-        <li>
-          <a href="#">home</a>
-          <ul>
-            <li>
-              <a href="#">new music</a>
-              <ul>
-                <li><a href="#">tracks</a></li>
-                <li><a href="#">artists</a></li>
-              </ul>
-            </li>
-            <li><a href="#">artists</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </head>
-
-  <body>
     
+  </head>
+  
+  <body>
     <header>
+      <div class=" search-box flex justify-center ...">
+        <button type="button" class="inline-block shadow-blck shadow-xl rounded-3xl px-3 bg-slate-300"> 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" 
+          stroke="currentColor" class="h-6 inline  w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" 
+          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 
+          5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+        <input type="text" placeholder="Search" class="bg-slate-300 placeholder:text-slate-800
+        font-thin outline-none text-lg px-2 py-4">
+      </button>
+    </div>
       <a href="#" class="logo">pitch</a>
       <input type="checkbox" id="menu-bar" />
       <label for="menu-bar">Menu</label>
@@ -53,19 +44,8 @@
           </li>
         </ul>
       </nav>
-      <div class=" search-box flex justify-center ...">
-        <button type="button" class="inline-block shadow-block shadow-xl rounded-3xl px-3 bg-slate-300"> 
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" 
-               stroke="currentColor" class="h-6 inline  w-6">
-            <path stroke-linecap="round" stroke-linejoin="round" 
-               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 
-               5.196a7.5 7.5 0 0010.607 10.607z" />
-        </svg>
-        <input type="text" placeholder="Search" class="bg-slate-300 placeholder:text-slate-800
-                     font-thin outline-none text-lg px-2 py-4">
-        </button>
-      </div>
     </header>
+    
 
     <div class="grid grid-cols-5 gap-4 bg-gradient-to-r from-indigo-500 h-96">
       <div>01</div>
@@ -88,5 +68,8 @@
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
+      
+    
+
 
       
