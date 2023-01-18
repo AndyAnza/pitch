@@ -84,6 +84,11 @@ header label {
   display: none;
 }
 
+footer .weather {
+  font-size: 20px;
+  color: white;
+}
+
 @media (max-width: 991px) {
   header {
     padding: 20px;
