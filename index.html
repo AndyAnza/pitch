@@ -48,27 +48,93 @@
       </ul>
     </nav>
   </header>
-  <!--Empty space, we could place search bar or web application info here-->
+
+
+  <div class="grid grid-cols-1 h-24 mt-20"></div> <!--DONT DELETE PLS-->
+
+
+<!--POKEMON generator button-->
+  <button class="btn btn-danger font-sans text-base text-white " id="fetch-button">
+    Click Me
+  </button>
+
   <!--Containers-->
-  <div class="grid grid-cols-5 gap-4 h-96">
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">01</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">02</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">03</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">04</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">05</div>
-  </div>
+  <div id="cards" class="flex-wrap gap-4 h-96 w-96 place-items-center">
+    <div id="cont1"
+      class="rounded-md border-8 bg-gradient-to-r from-indigo-500 font-sans text-base text-white justify-items-center text-center">
+      <img class="pokeImg rounded-full mx-auto w-96 h-96 bg-white">
+      <ul>
+        <li>Name:<span id="name"></span></li>
+        <li>ID:<span id="id"></span></li>
+        <li>Type:<span id="type"></span></li>
+        <li>Weight:<span id="weight"></span></li>
+        <li>Height:<span id="height"></span></li>
+      </ul>
+    </div>
 
-  <div class="grid grid-cols-5 gap-4  h-96 mb-8 ">
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">06</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">07</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">08</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">09</div>
-    <div class="rounded-full bg-gradient-to-r from-indigo-500">10</div>
-  </div>
 
-  <!--Footer-->
-  <footer class="grid grid-cols-1 h-24 bg-zinc-900">
-  </footer>
+    <div id="cont2"
+      class="rounded-md border-8 bg-gradient-to-r from-indigo-500 font-sans text-base text-white justify-items-center text-center">
+      <img class="pokeImg2 rounded-full mx-auto w-96 h-96 bg-white">
+      <ul>
+        <li>Name:<span id="name2"></span></li>
+        <li>ID:<span id="id2"></span></li>
+        <li>Type:<span id="type2"></span></li>
+        <li>Weight:<span id="weight2"></span></li>
+        <li>Height:<span id="height2"></span></li>
+      </ul>
+    </div>
+
+    <div id="cont3"
+      class="rounded-md border-8 bg-gradient-to-r from-indigo-500 font-sans text-base text-white justify-items-center text-center">
+      <img class="pokeImg3 rounded-full mx-auto w-96 h-96 bg-white">
+      <ul>
+        <li>Name:<span id="name3"></span></li>
+        <li>ID:<span id="id3"></span></li>
+        <li>Type:<span id="type3"></span></li>
+        <li>Weight:<span id="weight3"></span></li>
+        <li>Height:<span id="height3"></span></li>
+      </ul>
+    </div>
+
+    <div id="cont4"
+      class="rounded-md border-8 bg-gradient-to-r from-indigo-500 font-sans text-base text-white justify-items-center text-center">
+      <img class="pokeImg4 rounded-full mx-auto w-96 h-96 bg-white">
+      <ul>
+        <li>Name:<span id="name4"></span></li>
+        <li>ID:<span id="id4"></span></li>
+        <li>Type:<span id="type4"></span></li>
+        <li>Weight:<span id="weight4"></span></li>
+        <li>Height:<span id="height4"></span></li>
+      </ul>
+    </div>
+
+    <div id="cont5"
+      class="rounded-md border-8 bg-gradient-to-r from-indigo-500 font-sans text-base text-white justify-items-center text-center">
+      <img class="pokeImg5 rounded-full mx-auto w-96 h-96 bg-white">
+      <ul>
+        <li>Name:<span id="name5"></span></li>
+        <li>ID:<span id="id5"></span></li>
+        <li>Type:<span id="type5"></span></li>
+        <li>Weight:<span id="weight5"></span></li>
+        <li>Height:<span id="height5"></span></li>
+      </ul>
+    </div>
+
+    <div id="cont6"
+      class="rounded-md border-8 bg-gradient-to-r from-indigo-500 font-sans text-base text-white justify-items-center text-center">
+      <img class="pokeImg6 rounded-full mx-auto w-96 h-96 bg-white">
+      <ul>
+        <li>Name:<span id="name6"></span></li>
+        <li>ID:<span id="id6"></span></li>
+        <li>Type:<span id="type6"></span></li>
+        <li>Weight:<span id="weight6"></span></li>
+        <li>Height:<span id="height6"></span></li>
+      </ul>
+    </div>
+  </div> <!--Containers end-->
+
+
 
   <script src=" ./assets/js/script.js">
   </script>
