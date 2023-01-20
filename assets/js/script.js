@@ -1,10 +1,91 @@
-/*const client_id = 'c801eb67890c4a1cac34bab0ba5b35a7'
-const client_secret = '335e1cd70e934030bdbf3628bfffc08c'
-const redirect_uri = 'https://andyanza.github.io/pitch/'*/
+function randomFirePokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/fire')
+    .then((response) => response.json())
+    .then((data) => {
+        const index = Math.floor(Math.random() * data.pokemon.length);
+        const newPoke = data.pokemon[index];
+        
+        fetch(newPoke.pokemon.url)
+        .then((response) => response.json())
+        .then((data) => {
+            document.querySelector('.pokemonBox').innerHTML = `
+            <div>
+                <img src='${data.sprites.other['official-artwork'].front_default}' alt='${data.name}'></img>
+            </div>
+            <div class='pokemonInfo'>
+                <h1>${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomFirePokemon()
 
-//const authorizationUrl = 'https://accounts.spotify.com/authorize?client_id=c801eb67890c4a1cac34bab0ba5b35a7&response_type=code&redirect_uri=https://andyanza.github.io/pitch/&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state'
+function randomGrassPokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/grass')
+    .then((response) => response.json())
+    .then((data) => {
+        const index = Math.floor(Math.random() * data.pokemon.length);
+        const newPoke = data.pokemon[index];
+        
+        fetch(newPoke.pokemon.url)
+        .then((response) => response.json())
+        .then((data) => {
+            document.querySelector('.pokemonBox').innerHTML = `
+            <div>
+                <img src='${data.sprites.other['official-artwork'].front_default}' alt='${data.name}'></img>
+            </div>
+            <div class='pokemonInfo'>
+                <h1>${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomGrassPokemon()
 
-document.getElementById('log-in-button').onclick = function() {
-        location.href='https://accounts.spotify.com/authorize?client_id=c801eb67890c4a1cac34bab0ba5b35a7&response_type=code&redirect_uri=https://andyanza.github.io/pitch/&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state'
-    }
+function randomFlyingPokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/flying')
+    .then((response) => response.json())
+    .then((data) => {
+        const index = Math.floor(Math.random() * data.pokemon.length);
+        const newPoke = data.pokemon[index];
+        
+        fetch(newPoke.pokemon.url)
+        .then((response) => response.json())
+        .then((data) => {
+            document.querySelector('.pokemonBox').innerHTML = `
+            <div>
+                <img src='${data.sprites.other['official-artwork'].front_default}' alt='${data.name}'></img>
+            </div>
+            <div class='pokemonInfo'>
+                <h1>${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomFlyingPokemon()
 
+function randomWaterPokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/water')
+    .then((response) => response.json())
+    .then((data) => {
+        const index = Math.floor(Math.random() * data.pokemon.length);
+        const newPoke = data.pokemon[index];
+        
+        fetch(newPoke.pokemon.url)
+        .then((response) => response.json())
+        .then((data) => {
+            document.querySelector('.pokemonBox').innerHTML = `
+            <div>
+                <img src='${data.sprites.other['official-artwork'].front_default}' alt='${data.name}'></img>
+            </div>
+            <div class='pokemonInfo'>
+                <h1>${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomWaterPokemon()
