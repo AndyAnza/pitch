@@ -84,6 +84,10 @@ header label {
   display: none;
 }
 
+.zodiac {
+  color: white;
+}
+
 @media (max-width: 991px) {
   header {
     padding: 20px;

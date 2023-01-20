@@ -339,3 +339,39 @@ fetchButton.addEventListener('click', getApi);
 
 
 /////////////////////////////////////////////////////POKEMON GENERATOR CODE ENDS HERE////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////ASTROLOGY API CODE STARTS HERE//////////////////////////////////////////////
+
+const options = {
+    method: 'POST',
+    headers: {
+        'X-RapidAPI-Key': 'b36869ebe5mshc6556476aea0bd4p19f743jsncf1fef2c8e0a',
+        'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
+    }
+};
+
+var sign = document.querySelector(".compatibility");
+var mood = document.querySelector(".mood");
+
+fetch('https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today', options)
+    .then(response => response.json())
+    .then(data => {
+        var signValue = data["compatibility"];
+        var moodValue = data["mood"];
+
+        sign.innerHTML = "Compatibility: "+signValue;
+        mood.innerHTML = "Mood: "+moodValue;
+    })
+    .catch(err => console.error(err));
+//console.log (mood.innerHTML = "Mood: "+moodValue);
+   // })
+    //.catch(err => console.error(err));
+
+//.then(data => console.log(data))
+
+
+
+
+/////////////////////////////////////////////////////ASTROLOGY API CODE EDNS HERE//////////////////////////////////////////////
