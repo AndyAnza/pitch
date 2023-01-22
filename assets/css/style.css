@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: poppins;
   text-transform: none;
   text-decoration: none;
 }
@@ -83,10 +82,19 @@ header label {
   cursor: pointer;
   display: none;
 }
-
 .zodiac {
   color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  text-align: left;
+  width: 75%;
+  padding: 15px;
 }
+
+.mood {
+  margin-top: 5%;
+}
+
 
 @media (max-width: 991px) {
   header {
@@ -120,4 +128,5 @@ header label {
   #menu-bar:checked ~ .navbar {
     display: initial;
   }
+  
 }
