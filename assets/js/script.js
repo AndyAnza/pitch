@@ -1,13 +1,12 @@
 //////////////////////////////////////////////////////////////6 RANDOM POKEMON GENERATOR CODE STARTS HERE/////////////////////////////
 
 let fetchButton = document.getElementById('fetch-button');
-let allPokemon = 1008;
+let allPokemon = 905;
 
 document.getElementById('cards').style.display = "none";
 document.getElementById('closePokeGenButton').style.display = "none"; 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////POKEMON 1
-
 
 function getApi() {
 
@@ -31,36 +30,29 @@ function getApi() {
             document.getElementById('closePokeGenButton').style.display = "block";
             document.getElementById('cards').style.display = "block";
 
-            console.log(data.name);
-            console.log(data);
+            // console.log(data.name);
+            // console.log(data);
 
-
+            let imgValue = document.querySelector('.pokeImg').setAttribute('src', data.sprites.other['official-artwork'].front_default);
             let pokeName = data.name;
             let pokeId = data.id;
             let pokeType = data.types[0].type.name;
             let weight = data.weight;
             let pokeWeight = weight * 0.1;
             pokeWeight = pokeWeight.toFixed(1);
-            let height = data.height;
-            let pokeHeight = height * 0.1;
+            let height1 = data.height;
+            let pokeHeight = height1 * 0.1;
             pokeHeight = pokeHeight.toFixed(1);
 
-
-
-            let imgValue = document.querySelector('.pokeImg').setAttribute('src', data.sprites.other['official-artwork'].front_default);
-            if (imgValue == ''){
-                getApi();
-            };
-
-            let nameEle = document.getElementById("name");
+            let nameEle = document.getElementById("name1");
             let printName = nameEle.textContent += " " + pokeName;
-            let idEle = document.getElementById("id");
+            let idEle = document.getElementById("id1");
             let printId = idEle.textContent += " " + pokeId;
-            let typeEle = document.getElementById("type");
+            let typeEle = document.getElementById("type1");
             let printType = typeEle.textContent += " " + pokeType;
-            let weightEle = document.getElementById("weight");
+            let weightEle = document.getElementById("weight1");
             let printWeight = weightEle.textContent += " " + pokeWeight + " Kg";
-            let heightEle = document.getElementById("height");
+            let heightEle = document.getElementById("height1");
             let printHeight = heightEle.textContent += " " + pokeHeight + " m";
 
         });
@@ -68,10 +60,6 @@ function getApi() {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////POKEMON 2
 
-
-    function generateRandomIntegerInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
     let randomPoke2 = generateRandomIntegerInRange(1, allPokemon);
 
 
@@ -84,8 +72,8 @@ function getApi() {
         })
         .then(function generatePokemons(data) {
 
-            console.log(data.name);
-            console.log(data);
+            // console.log(data.name);
+            // console.log(data);
 
             let pokeName2 = data.name;  ///DO NOT CHANGE VALUE NAME
             let pokeId2 = data.id; ///DO NOT CHANGE VALUE NAME
@@ -97,12 +85,7 @@ function getApi() {
             let pokeHeight2 = height2 * 0.1; 
             pokeHeight2 = pokeHeight2.toFixed(1);
 
-
             let imgValue2 = document.querySelector('.pokeImg2').setAttribute('src', data.sprites.other['official-artwork'].front_default);
-            if (imgValue2 == ''){
-                imgValue2 = document.querySelector('.pokeImg2').setAttribute('src', data.sprites.other.home.front_default);
-            };
-
             let nameEle2 = document.getElementById("name2");
             let printName2 = nameEle2.textContent += " " + pokeName2;
             let idEle2 = document.getElementById("id2");
@@ -119,10 +102,6 @@ function getApi() {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////POKEMON 3
 
-
-    function generateRandomIntegerInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
     let randomPoke3 = generateRandomIntegerInRange(1, allPokemon);
 
 
@@ -135,9 +114,8 @@ function getApi() {
         })
         .then(function generatePokemons(data) {
 
-            console.log(data.name);
-            console.log(data);
-
+            // console.log(data.name);
+            // console.log(data);
 
             let pokeName3 = data.name;  ///DO NOT CHANGE VALUE NAME
             let pokeId3 = data.id; ///DO NOT CHANGE VALUE NAME
@@ -149,12 +127,7 @@ function getApi() {
             let pokeHeight3 = height3 * 0.1; 
             pokeHeight3 = pokeHeight3.toFixed(1);
 
-
             let imgValue3 = document.querySelector('.pokeImg3').setAttribute('src', data.sprites.other['official-artwork'].front_default);
-            if (imgValue3 == ''){
-                imgValue3 = document.querySelector('.pokeImg3').setAttribute('src', data.sprites.other.home.front_default);
-            };
-
             let nameEle3 = document.getElementById("name3");
             let printName3 = nameEle3.textContent += " " + pokeName3;
             let idEle3 = document.getElementById("id3");
@@ -171,10 +144,6 @@ function getApi() {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////POKEMON 4
 
-
-    function generateRandomIntegerInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
     let randomPoke4 = generateRandomIntegerInRange(1, allPokemon);
 
 
@@ -187,10 +156,8 @@ function getApi() {
         })
         .then(function generatePokemons(data) {
 
-
-            console.log(data.name);
-            console.log(data);
-
+            // console.log(data.name);
+            // console.log(data);
 
             let pokeName4 = data.name;  ///DO NOT CHANGE VALUE NAME
             let pokeId4 = data.id; ///DO NOT CHANGE VALUE NAME
@@ -202,13 +169,7 @@ function getApi() {
             let pokeHeight4 = height4 * 0.1;
             pokeHeight4 = pokeHeight4.toFixed(1);
 
-
             let imgValue4 = document.querySelector('.pokeImg4').setAttribute('src', data.sprites.other['official-artwork'].front_default);
-            if (imgValue4 == ''){
-                imgValue4 = document.querySelector('.pokeImg4').setAttribute('src', data.sprites.other.home.front_default);
-            };
-
-
             let nameEle4 = document.getElementById("name4");
             let printName4 = nameEle4.textContent += " " + pokeName4;
             let idEle4 = document.getElementById("id4");
@@ -225,10 +186,6 @@ function getApi() {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////POKEMON5
 
-
-    function generateRandomIntegerInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
     let randomPoke5 = generateRandomIntegerInRange(1, allPokemon);
 
 
@@ -241,10 +198,8 @@ function getApi() {
         })
         .then(function generatePokemons(data) {
 
-
-            console.log(data.name);
-            console.log(data);
-
+            // console.log(data.name);
+            // console.log(data);
 
             let pokeName5 = data.name;  ///DO NOT CHANGE VALUE NAME
             let pokeId5 = data.id; ///DO NOT CHANGE VALUE NAME
@@ -256,12 +211,7 @@ function getApi() {
             let pokeHeight5 = height5 * 0.1;
             pokeHeight5 = pokeHeight5.toFixed(1);
 
-
             let imgValue5 = document.querySelector('.pokeImg5').setAttribute('src', data.sprites.other['official-artwork'].front_default);
-            if (imgValue5 == ''){
-                imgValue5 = document.querySelector('.pokeImg5').setAttribute('src', data.sprites.other.home.front_default);
-            };
-
             let nameEle5 = document.getElementById("name5");
             let printName5 = nameEle5.textContent += " " + pokeName5;
             let idEle5 = document.getElementById("id5");
@@ -278,10 +228,6 @@ function getApi() {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////POKEMON6
 
-
-    function generateRandomIntegerInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
     let randomPoke6 = generateRandomIntegerInRange(1, allPokemon);
 
 
@@ -294,10 +240,8 @@ function getApi() {
         })
         .then(function generatePokemons(data) {
 
-
-            console.log(data.name);
-            console.log(data);
-
+            // console.log(data.name);
+            // console.log(data);
 
             let pokeName6 = data.name;  ///DO NOT CHANGE VALUE NAME
             let pokeId6 = data.id; ///DO NOT CHANGE VALUE NAME
@@ -309,12 +253,7 @@ function getApi() {
             let pokeHeight6 = height6 * 0.1;
             pokeHeight6 = pokeHeight6.toFixed(1);
 
-
             let imgValue6 = document.querySelector('.pokeImg6').setAttribute('src', data.sprites.other['official-artwork'].front_default);
-            if (imgValue6 == ''){
-                imgValue6 = document.querySelector('.pokeImg6').setAttribute('src', data.sprites.other.home.front_default);
-            };
-
             let nameEle6 = document.getElementById("name6");
             let printName6 = nameEle6.textContent += " " + pokeName6;
             let idEle6 = document.getElementById("id6");
@@ -327,11 +266,10 @@ function getApi() {
             let printHeight6 = heightEle6.textContent += " " + pokeHeight6 + " m";
 
         });
-
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}
 fetchButton.addEventListener('click', getApi);
 
 ////////
@@ -348,6 +286,17 @@ function closePokeGenerator(){
 
 closePokeGenButton.addEventListener('click', closePokeGenerator);
 
+// for (var i = 1; i < 1008; i++){
+//     let requestUrl11 = ' https://pokeapi.co/api/v2/pokemon/'
+//     requestUrl11 += [i]
+//     fetch(requestUrl11)
+//         .then(function (response) {
+//             return response.json();
+//         })
+//         .then(function generatePokemons(data) {
+//         console.log( data.id + " " + data.sprites.other['official-artwork'].front_default)
+//             })
+// }
 
 /////////////////////////////////////////////////////POKEMON GENERATOR CODE ENDS HERE////////////////////////////////////////////
 
