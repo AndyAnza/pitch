@@ -302,43 +302,6 @@ closePokeGenButton.addEventListener('click', closePokeGenerator);
 
 
 
-/////////////////////////////////////////////////////ASTROLOGY API CODE STARTS HERE//////////////////////////////////////////////
-
-const options = {
-    method: 'POST',
-    headers: {
-        'X-RapidAPI-Key': 'b36869ebe5mshc6556476aea0bd4p19f743jsncf1fef2c8e0a',
-        'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
-    }
-};
-
-var sign = document.querySelector(".compatibility");
-var mood = document.querySelector(".mood");
-
-fetch('https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today', options)
-    .then(response => response.json())
-    .then(data => {
-        var signValue = data["compatibility"];
-        var moodValue = data["mood"];
-
-        sign.innerHTML = "Compatibility: "+signValue;
-        mood.innerHTML = "Mood: "+moodValue;
-    })
-    .catch(err => console.error(err));
-//console.log (mood.innerHTML = "Mood: "+moodValue);
-   // })
-    //.catch(err => console.error(err));
-
-//.then(data => console.log(data))
-
-
-
-
-/////////////////////////////////////////////////////ASTROLOGY API CODE EDNS HERE//////////////////////////////////////////////
-
-
-
-
 ////////////////////////////////////////////////GETS A RANDOM FIRE TYPE POKEMON///////////////////////////////////////////////////
 
 function randomFirePokemon() { 
@@ -475,11 +438,157 @@ function startingPage() {
     document.querySelector('#startingPageContainer').innerHTML = `
     
     <div class="text-white absolute right-2/4 top-1/2">
-        <h1 class="text-5xl">Enter your birthday, to Discoer your <br> Zodiac sign and Spirit Pokemon</h1>
+        <h1 class="text-5xl">Enter your birthdate to Discover your <br> Zodiac sign and Spirit Pokemon</h1>
         <input id="calender" class="text-black m-5 rounded text-xl" type="date" id="start" name="trip-start" value="2018-07-22" min="1900-01-01" max="20">
-        <button class="bg-blue-800 text-xl py-1 px-4 rounded" type="button">Enter</button>
+        <button onclick="ShowDiv()" id="EnterButton" class="bg-blue-800 text-xl py-1 px-4 rounded" type="button">Enter</button>
     </div>
     `;
 }
 
 startingPage();
+
+/////////////////////////////////////////////////////ASTROLOGY API CODE STARTS HERE//////////////////////////////////////////////
+
+// Function to calculate zodiac sign
+
+function zodiac_sign(day, month)
+    {
+        var astro_sign="";
+           
+        // checks month and date within the
+        // valid range of a specified zodiac
+        if (month == 12){
+               
+            if (day < 22)
+            astro_sign = "Sagittarius";
+            else
+            astro_sign ="capricorn";
+        }
+               
+        else if (month == 01){
+            if (day < 20)
+            astro_sign = "Capricorn";
+            else
+            astro_sign = "aquarius";
+        }
+               
+        else if (month == 02){
+            if (day < 19)
+            astro_sign = "Aquarius";
+            else
+            astro_sign = "pisces";
+        }
+               
+        else if(month == 03){
+            if (day < 21)
+            astro_sign = "Pisces";
+            else
+            astro_sign = "aries";
+        }
+        else if (month == 04){
+            if (day < 20)
+            astro_sign = "Aries";
+            else
+            astro_sign = "taurus";
+        }
+               
+        else if (month == 05){
+            if (day < 21)
+            astro_sign = "Taurus";
+            else
+            astro_sign = "gemini";
+        }
+               
+        else if( month == 06){
+            if (day < 21)
+            astro_sign = "Gemini";
+            else
+            astro_sign = "cancer";
+        }
+               
+        else if (month == 07){
+            if (day < 23)
+            astro_sign = "Cancer";
+            else
+            astro_sign = "leo";
+        }
+               
+        else if( month == 08){
+            if (day < 23)
+            astro_sign = "Leo";
+            else
+            astro_sign = "virgo";
+        }
+               
+        else if (month == 09){
+            if (day < 23)
+            astro_sign = "Virgo";
+            else
+            astro_sign = "libra";
+        }
+               
+        else if (month == 10){
+            if (day < 23)
+            astro_sign = "Libra";
+            else
+            astro_sign = "scorpio";
+        }
+               
+        else if (month == 11){
+            if (day < 22)
+            astro_sign = "scorpio";
+            else
+            astro_sign = "sagittarius";
+        }
+        
+        console.log(astro_sign); //use this cosole log to check the sign
+    }
+    
+
+     // Driver code
+        let day = document.getElementById('calender').value[8,9]; //this needs to be linked to the value day input in the calendar
+        let month = document.getElementById('calender').value[5,6]; //this needs to be linked to the value month input in the calendar
+        zodiac_sign(day, month); 
+
+
+const options = {
+    method: 'POST',
+    headers: {
+        'X-RapidAPI-Key': 'b36869ebe5mshc6556476aea0bd4p19f743jsncf1fef2c8e0a',
+        'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
+    }
+};
+
+var sign = document.querySelector(".compatibility");
+var mood = document.querySelector(".mood");
+
+
+fetch('https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today', options)
+    .then(response => response.json())
+    .then(data => {
+        var signValue = data["compatibility"];
+        var MoodValue = data["description"];
+
+        sign.innerHTML = "Your sign is "+signValue;
+        mood.innerHTML = "Today's Horoscope: "+MoodValue;
+        document.getElementById('AstrologyInfo').style.display = "none";
+        
+    })
+    .catch(err => console.error(err));
+    
+    function ShowDiv() {
+        document.getElementById("AstrologyInfo").style.display = "";
+    }
+
+//console.log (mood.innerHTML = "Mood: "+moodValue);
+   // })
+    //.catch(err => console.error(err));
+
+//.then(data => console.log(data))
+
+
+
+
+
+/////////////////////////////////////////////////////ASTROLOGY API CODE EDNS HERE//////////////////////////////////////////////
+
