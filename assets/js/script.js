@@ -335,3 +335,151 @@ fetch('https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today', o
 
 
 /////////////////////////////////////////////////////ASTROLOGY API CODE EDNS HERE//////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////GETS A RANDOM FIRE TYPE POKEMON///////////////////////////////////////////////////
+
+function randomFirePokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/fire')
+    .then(res => res.json())
+    .then((data) => {
+        const ranNum = Math.floor(Math.random() * data.pokemon.length);
+        const ranPoke = data.pokemon[ranNum];
+        
+        fetch(ranPoke.pokemon.url)
+        .then(res => res.json())
+        .then((data) => {
+            document.querySelector('#yourPokemonType').innerHTML = `
+            <div class="flex justify-center items-center">
+                <img src='${data.sprites.other['official-artwork'].front_default}'></img>
+            </div>
+            <div>
+                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomFirePokemon()
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////GETS A RANDOM GRASS TYPE POKEMON (WILL BE USED FOR THE EARTH ZODIACS)////////////////////////////////////////
+function randomGrassPokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/grass')
+    .then(res => res.json())
+    .then((data) => {
+        const ranNum = Math.floor(Math.random() * data.pokemon.length);
+        const ranPoke = data.pokemon[ranNum];
+        
+        fetch(ranPoke.pokemon.url)
+        .then(res => res.json())
+        .then((data) => {
+            document.querySelector('#yourPokemonType').innerHTML = `
+            <div class="flex justify-center items-center">
+                <img src='${data.sprites.other['official-artwork'].front_default}'></img>
+            </div>
+            <div>
+                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomGrassPokemon()
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////GETS A RANDOM FLYING TYPE POKEMON (WILL BET USED FOR THE AIR ZODIACS)///////////////////////////////////
+function randomFlyingPokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/flying')
+    .then(res => res.json())
+    .then((data) => {
+        const ranNum = Math.floor(Math.random() * data.pokemon.length);
+        const ranPoke = data.pokemon[ranNum];
+        
+        fetch(ranPoke.pokemon.url)
+        .then(res => res.json())
+        .then((data) => {
+            document.querySelector('#yourPokemonType').innerHTML = `
+            <div class="flex justify-center items-center">
+                <img src='${data.sprites.other['official-artwork'].front_default}'></img>
+            </div>
+            <div>
+                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomFlyingPokemon()
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////GETS A RANDOM WATER TYPE POKEMON////////////////////////////////////////////////////////////
+function randomWaterPokemon() { 
+    fetch('https://pokeapi.co/api/v2/type/water')
+    .then(res => res.json())
+    .then((data) => {
+        const ranNum = Math.floor(Math.random() * data.pokemon.length);
+        const ranPoke = data.pokemon[ranNum];
+        
+        fetch(ranPoke.pokemon.url)
+        .then(res => res.json())
+        .then((data) => {
+            document.querySelector('#yourPokemonType').innerHTML = `
+            <div class="flex justify-center items-center">
+                <img src='${data.sprites.other['official-artwork'].front_default}'></img>
+            </div>
+            <div>
+                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+            </div>
+            `;   
+        })
+    })
+}
+//randomWaterPokemon()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////DISCOVER YOUR ZODIAC SIGN AND SPIRIT POKEMON////////////////////////////////////////////////////////////
+
+
+/*function startingPage() {
+    document.querySelector("#startingPageContainer").innerHTML = `
+    
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png"/>
+    
+    `;
+}*/
+
+
+
+function startingPage() {
+    document.body.style.backgroundImage = "url('assets/images/mew.jpg')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.querySelector('#startingPageContainer').innerHTML = `
+    
+    <div class="text-white absolute right-2/4 top-1/2">
+        <h1 class="text-5xl">Enter your birthday, to Discoer your <br> Zodiac sign and Spirit Pokemon</h1>
+        <input id="calender" class="text-black m-5 rounded text-xl" type="date" id="start" name="trip-start" value="2018-07-22" min="1900-01-01" max="20">
+        <button class="bg-blue-800 text-xl py-1 px-4 rounded" type="button">Enter</button>
+    </div>
+    `;
+}
+
+startingPage();
