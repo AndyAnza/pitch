@@ -4,7 +4,7 @@ let fetchButton = document.getElementById('fetch-button');
 let allPokemon = 905;
 
 document.getElementById('cards').style.display = "none";
-document.getElementById('closePokeGenButton').style.display = "none"; 
+document.getElementById('closePokeGenButton').style.display = "none";  
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////POKEMON 1
 
@@ -29,6 +29,8 @@ function getApi() {
             document.getElementById('fetch-button').style.display = "none"; 
             document.getElementById('closePokeGenButton').style.display = "block";
             document.getElementById('cards').style.display = "block";
+            document.getElementById('fetchFormContainerBtn').style.display = "none"; 
+            document.getElementById('homePage').style.display = "none";
 
             // console.log(data.name);
             // console.log(data);
@@ -279,12 +281,20 @@ function closePokeGenerator(){
     document.getElementById('cards').style.display = "none";  
     document.getElementById('fetch-button').style.display = "block"; 
     document.getElementById('closePokeGenButton').style.display = "none";
+    document.getElementById('fetchFormContainerBtn').style.display = "block";
+    document.getElementById('homePage').style.display = "block";
     document.querySelectorAll('.erase').forEach(function(span) {
         span.innerHTML = '';
     });
 }
 
 closePokeGenButton.addEventListener('click', closePokeGenerator);
+
+
+//Redirects to Form and Trainer Card html
+function redirect(){
+    window.location.href = "form.html"
+}
 
 // for (var i = 1; i < 1008; i++){
 //     let requestUrl11 = ' https://pokeapi.co/api/v2/pokemon/'
@@ -437,7 +447,7 @@ function startingPage() {
     document.body.style.backgroundSize = "cover";
     document.querySelector('#startingPageContainer').innerHTML = `
     
-    <div class="text-white absolute right-2/4 top-1/2">
+    <div class="text-white absolute right-2/4 top-1/2" id="homePage">
         <h1 class="text-5xl">Enter your birthdate to Discover your <br> Zodiac sign and Spirit Pokemon</h1>
         <input id="calender" class="text-black m-5 rounded text-xl" type="date" id="start" name="trip-start" value="2018-07-22" min="1900-01-01" max="2023-01-25">
         <button onclick="ShowDiv()" id="EnterButton" class="bg-blue-800 text-xl py-1 px-4 rounded" type="button">Enter</button>

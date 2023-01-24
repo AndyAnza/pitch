@@ -4,6 +4,10 @@
 
 As bootcamp students, we want to develop this app on Pokemon and Zodiac signs in order to show the skills we have learned at this point of the bootcamp. This app features different pokemons and allows you to discover your zodiac sign.
 
+## URL
+
+https://andyanza.github.io/pitch/
+
 ## Installation
 
 N/A
