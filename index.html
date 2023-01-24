@@ -1,159 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>| pitch |</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>| pitch |</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <body>
+    <header>
+      <a href="#" class="logo">pitch</a>
+      <!--this is the search bar section-->
+      <div
+        class="flex justify-center py-3 px-6 bg-gray-50 border-b space-x-6 text-gray-400 focus-width:text-gray-600"
+        class="searchBox"
+      >
+        <input
+          id="pokemonName"
+          type="pokemon name"
+          placeholder="Pokemon name"
+          class="bg-slate-300 font-semibold placeholder:text-slate-500 rounded-2xl outline-none text-lg px-1 py-1"
+        />
+        <button
+          type="button"
+          id="search"
+          class="inline-black shadow-block shadow-xl border-2 border-white-500 rounded-3xl px-3 bg-slate-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 26 26"
+            stroke-width="4"
+            stroke="currentColor"
+            class="h-6 inline w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </button>
+      </div>
+      <!---->
+      <input type="checkbox" id="menu-bar" />
+      <label for="menu-bar">Menu</label>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="#">home</a>
+            <ul>
+              <li>
+                <a href="#AstrologyInfo">Zodiac</a>
+              </li>
+              <li><a href="#">Pokemon</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <a href="#" class="logo">pitch</a>
-    <!--this is the search bar section-->
-    <div class="flex justify-center py-3 px-6 bg-gray-50 border-b space-x-6  text-gray-400  focus-width:text-gray-600" class="searchBox">
-      <input id="pokemonName" type="pokemon name" placeholder="Pokemon name" 
-      class="bg-slate-300 font-semibold placeholder:text-slate-500  rounded-2xl outline-none text-lg px-1 py-1" >
-      <button type="button" id="search"  class="inline-black shadow-block shadow-xl border-2 border-white-500  rounded-3xl px-3 bg-slate-300"> 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" stroke-width="4" stroke="currentColor" class="h-6 inline w-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-        </svg>
+    <div class="grid grid-cols-2 h-24 mt-20 justify-items-center">
+      <!--Margin bellow header - DONT DELETE PLS-->
+      <button
+        class="place-self-end btn btn-danger font-sans -apple-system text-base rounded-full border-2 border-pink-700 text-pink-700 text-2xl px-4 py-4 mx-4 my-4 top-20 right-0 hover:bg-pink-700 hover:text-black"
+        id="fetch-button"
+      >
+        <!--POKEMON generator button-->
+        POKEMON Generator
+      </button>
+      <button
+        onclick="redirect()"
+        class="place-self-start btn btn-danger font-sans -apple-system text-base rounded-full border-2 border-pink-700 text-pink-700 text-2xl px-4 py-4 mx-4 my-4 top-20 right-0 hover:bg-pink-700 hover:text-black"
+        id="fetchFormContainerBtn"
+      >
+        <!--POKEMON generator button-->
+        POKE Trainer Card
       </button>
     </div>
+
+    <!--Containers-->
+    <div
+      id="cards"
+      class="max-w-full justify-items-center rounded-md border-8 bg-gradient-to-r from-indigo-500 mx-72 relative"
+    >
+      <button
+        class="btn btn-danger font-sans text-base rounded-full border-2 border-pink-700 text-pink-700 text-5xl px-6 py-6 mx-8 my-8 justify-self-end fixed top-20 right-0 hover:bg-pink-700 hover:text-black"
+        id="closePokeGenButton"
+      >
+        <!--Close Pokemon generator button-->
+        X
+      </button>
+
+      <div id="cont1" class="text-center">
+        <img class="pokeImg erase rounded-md mx-auto w-96 h-96 bg-slate-200" />
+        <ul class="bg-zinc-800">
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Name -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="name1"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            ID -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="id1"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Type -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="type1"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Weight -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="weight1"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Height -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="height1"
+            ></span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="cont2" class="font-sans justify-items-center text-center">
+        <img class="pokeImg2 erase rounded-md mx-auto w-96 h-96 bg-slate-200" />
+        <ul class="bg-zinc-800">
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Name -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="name2"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            ID -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="id2"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Type -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="type2"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Weight -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="weight2"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Height -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="height2"
+            ></span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="cont3" class="font-sans justify-items-center text-center">
+        <img class="pokeImg3 erase rounded-md mx-auto w-96 h-96 bg-slate-200" />
+        <ul class="bg-zinc-800">
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Name -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="name3"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            ID -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="id3"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Type -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="type3"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Weight -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="weight3"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Height -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="height3"
+            ></span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="cont4" class="font-sans justify-items-center text-center">
+        <img class="pokeImg4 erase rounded-md mx-auto w-96 h-96 bg-slate-200" />
+        <ul class="bg-zinc-800">
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Name -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="name4"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            ID -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="id4"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Type -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="type4"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Weight -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="weight4"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Height -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="height4"
+            ></span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="cont5" class="font-sans justify-items-center text-center">
+        <img class="pokeImg5 erase rounded-md mx-auto w-96 h-96 bg-slate-200" />
+        <ul class="bg-zinc-800">
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Name -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="name5"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            ID -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="id5"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Type -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="type5"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Weight -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="weight5"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Height -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="height5"
+            ></span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="cont6" class="font-sans justify-items-center text-center">
+        <img class="pokeImg6 erase rounded-md mx-auto w-96 h-96 bg-slate-200" />
+        <ul class="bg-zinc-800">
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Name -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="name6"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            ID -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="id6"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Type -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="type6"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Weight -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="weight6"
+            ></span>
+          </li>
+          <li class="text-zinc-400 text-lg font-sans -apple-system">
+            Height -<span
+              class="erase text-zinc-50 text-xl font-normal font-sans -apple-system"
+              id="height6"
+            ></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--Containers end-->
+    <!--this is part of the pokemon search api-->
+    <div class="pokemonBox" class="flex justify-center 2rem"></div>
     <!---->
-    <input type="checkbox" id="menu-bar" />
-    <label for="menu-bar">Menu</label>
-    <nav class="navbar">
-      <ul>
-        <li>
-          <a href="#">home</a>
-          <ul>
-            <li>
-              <a href="#">new music</a>
-              <ul>
-                <li><a href="#">tracks</a></li>
-                <li><a href="#">artists</a></li>
-              </ul>
-            </li>
-            <li><a href="#">artists</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-
-  <div class="grid grid-cols-2 h-24 mt-20 justify-items-center"><!--Margin bellow header - DONT DELETE PLS-->
-    <button class="place-self-end btn btn-danger font-sans -apple-system text-base rounded-full border-2 border-pink-700 text-pink-700  text-2xl px-4 py-4 mx-4 my-4  top-20 right-0 hover:bg-pink-700 hover:text-black " id="fetch-button"><!--POKEMON generator button-->
-      POKEMON Generator
-    </button>
-    <button onclick="redirect()" class="place-self-start btn btn-danger font-sans -apple-system text-base rounded-full border-2 border-pink-700 text-pink-700  text-2xl px-4 py-4 mx-4 my-4  top-20 right-0 hover:bg-pink-700 hover:text-black " id="fetchFormContainerBtn"><!--POKEMON generator button-->
-      POKE Trainer Card
-    </button>
-  </div>
-
-
-  <!--Containers-->
-  <div id="cards" class="max-w-full justify-items-center rounded-md border-8 bg-gradient-to-r from-indigo-500 mx-72 relative">
-    <button class="btn btn-danger font-sans text-base rounded-full border-2 border-pink-700 text-pink-700  text-5xl px-6 py-6 mx-8 my-8 justify-self-end fixed top-20 right-0 hover:bg-pink-700 hover:text-black" id="closePokeGenButton"> <!--Close Pokemon generator button-->
-      X
-    </button>
-
-    <div id="cont1"class=" text-center ">
-      <img class="pokeImg erase rounded-md  mx-auto w-96 h-96 bg-slate-200">
-      <ul class="bg-zinc-800 ">
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Name -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="name1"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">ID -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="id1"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Type -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="type1"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Weight -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="weight1"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Height -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="height1"></span></li>
-      </ul>
-    </div>
-
-    <div id="cont2"class=" font-sans justify-items-center text-center">
-      <img class="pokeImg2 erase rounded-md  mx-auto w-96 h-96 bg-slate-200">
-      <ul class="bg-zinc-800 ">
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Name -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="name2"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">ID -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="id2"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Type -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="type2"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Weight -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="weight2"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Height -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="height2"></span></li>
-      </ul>
-    </div>
-
-    <div id="cont3"class="font-sans justify-items-center text-center">
-      <img class="pokeImg3 erase rounded-md  mx-auto w-96 h-96 bg-slate-200">
-      <ul class="bg-zinc-800">
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Name -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="name3"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">ID -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="id3"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Type -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="type3"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Weight -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="weight3"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Height -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="height3"></span></li>
-      </ul>
-    </div>
-
-    <div id="cont4" class=" font-sans justify-items-center text-center ">
-      <img class="pokeImg4 erase rounded-md  mx-auto w-96 h-96 bg-slate-200">
-      <ul class="bg-zinc-800">
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Name -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="name4"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">ID -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="id4"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Type -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="type4"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Weight -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="weight4"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Height -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="height4"></span></li>
-      </ul>
-    </div>
-
-    <div id="cont5" class=" font-sans justify-items-center text-center">
-      <img class="pokeImg5 erase rounded-md  mx-auto w-96 h-96 bg-slate-200">
-      <ul class="bg-zinc-800">
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Name -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="name5"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">ID -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="id5"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Type -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="type5"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Weight -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="weight5"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Height -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="height5"></span></li>
-      </ul>
-    </div>
-
-    <div id="cont6" class=" font-sans justify-items-center text-center">
-      <img class="pokeImg6 erase rounded-md  mx-auto w-96 h-96 bg-slate-200">
-      <ul class="bg-zinc-800">
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Name -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="name6"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">ID -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="id6"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Type -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="type6"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Weight -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="weight6"></span></li>
-        <li class="text-zinc-400 text-lg font-sans -apple-system">Height -<span class="erase text-zinc-50 text-xl font-normal font-sans -apple-system" id="height6"></span></li>
-      </ul>
-    </div>
-  </div> <!--Containers end-->
-<!--this is part of the pokemon search api-->
-  <div class="pokemonBox" class="flex justify-center 2rem">
-  </div>
-  <!---->
-  <!--Astrology information-->
-  <div id="AstrologyInfo" class="zodiac">
+    <!--Astrology information-->
+    <div id="AstrologyInfo" class="zodiac">
       <p class="signo"></p>
       <p class="mood"></p>
-  </div>
+    </div>
 
-
-  <!--RANDOM POKEMON TYPE CONTAINER<div>-->
+    <!--RANDOM POKEMON TYPE CONTAINER<div>-->
     <div id="yourPokemonType"></div>
 
     <!--BUTTON USED TO DISCOVER YOUR ZODIAC SIGN AND SPIRIT POKEMON-->
-    <div id="startingPageContainer"> </div>
-  
+    <div id="startingPageContainer"></div>
 
-
-  <script src=" ./assets/js/script.js">
-  </script>
-</body>
-
+    <script src=" ./assets/js/script.js"></script>
+  </body>
 </html>
-      
-    
-
-
-      
