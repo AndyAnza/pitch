@@ -439,7 +439,7 @@ function startingPage() {
     
     <div class="text-white absolute right-2/4 top-1/2">
         <h1 class="text-5xl">Enter your birthdate to Discover your <br> Zodiac sign and Spirit Pokemon</h1>
-        <input id="calender" class="text-black m-5 rounded text-xl" type="date" id="start" name="trip-start" value="2018-07-22" min="1900-01-01" max="20">
+        <input id="calender" class="text-black m-5 rounded text-xl" type="date" id="start" name="trip-start" value="2018-07-22" min="1900-01-01" max="2023-01-25">
         <button onclick="ShowDiv()" id="EnterButton" class="bg-blue-800 text-xl py-1 px-4 rounded" type="button">Enter</button>
     </div>
     `;
@@ -451,10 +451,9 @@ startingPage();
 
 // Function to calculate zodiac sign
 
+var astro_sign="";
 function zodiac_sign(day, month)
-    {
-        var astro_sign="";
-           
+    {     
         // checks month and date within the
         // valid range of a specified zodiac
         if (month == 12){
@@ -541,16 +540,8 @@ function zodiac_sign(day, month)
             astro_sign = "sagittarius";
         }
         
-        console.log(astro_sign); //use this cosole log to check the sign
-    }
-    
-
-     // Driver code
-        let day = document.getElementById('calender').value[8,9]; //this needs to be linked to the value day input in the calendar
-        let month = document.getElementById('calender').value[5,6]; //this needs to be linked to the value month input in the calendar
-        zodiac_sign(day, month); 
-
-
+};
+       
 const options = {
     method: 'POST',
     headers: {
@@ -559,23 +550,39 @@ const options = {
     }
 };
 
-var sign = document.querySelector(".compatibility");
+var signo = document.querySelector(".signo");
 var mood = document.querySelector(".mood");
-
 
 fetch('https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today', options)
     .then(response => response.json())
     .then(data => {
         var signValue = data["compatibility"];
         var MoodValue = data["description"];
-
-        sign.innerHTML = "Your sign is "+signValue;
+        
+        let input = document.getElementById("calender");
+        input.onchange = function() {
+        let date = input.value;
+        console.log(date);
+        
+        // perform additional actions here
+        let day = input.value[8,9];//document.getElementById('calender').value[8,9]; //this needs to be linked to the value day input in the calendar
+        let month = input.value[5,6];//document.getElementById('calender').value[5,6]; //this needs to be linked to the value month input in the calendar
+        zodiac_sign(day, month); 
+        
+        console.log(input.value[8]+input.value[9]);
+        console.log(input.value[5]+input.value[6]);
+        console.log(astro_sign); //use this cosole log to check the sign
+        
+        signo.innerHTML = "Your sign is "+astro_sign;
         mood.innerHTML = "Today's Horoscope: "+MoodValue;
+        
         document.getElementById('AstrologyInfo').style.display = "none";
+
+    }       
         
     })
     .catch(err => console.error(err));
-    
+    console.log(astro_sign);
     function ShowDiv() {
         document.getElementById("AstrologyInfo").style.display = "";
     }
@@ -585,9 +592,6 @@ fetch('https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today', o
     //.catch(err => console.error(err));
 
 //.then(data => console.log(data))
-
-
-
 
 
 /////////////////////////////////////////////////////ASTROLOGY API CODE EDNS HERE//////////////////////////////////////////////
