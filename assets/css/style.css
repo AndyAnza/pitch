@@ -95,6 +95,10 @@ header label {
   margin-top: 5%;
 }
 
+.signo {
+  margin-top: 5%;
+}
+
 
 @media (max-width: 991px) {
   header {
