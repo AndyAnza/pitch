@@ -525,7 +525,32 @@ fetch(
       signo.innerHTML = "Your sign is " + astro_sign;
       mood.innerHTML = "Today's Horoscope: " + MoodValue;
 
-      document.getElementById("AstrologyInfo").style.display = "none";
+      document.getElementById("AstrologyInfo").style.display = "none"; 
+    
+      switch(astro_sign) {
+        case "Taurus":
+        case "Virgo":
+        case "Capricorn":
+          randomGrassPokemon();
+          break;
+        case "Pisces":
+        case "Scorpio":
+        case "Cancer":
+          randomWaterPokemon();
+          break;
+        case "Libra":
+        case "Aquarius":
+        case "Gemini":
+          randomFlyingPokemon();
+          break;
+        case "Sagittarius":
+        case "Leo":
+        case "Aries":
+        default:
+          randomFirePokemon();
+          //break;
+      }
+    
     };
   })
   .catch((err) => console.error(err));
