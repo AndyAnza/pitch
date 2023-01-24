@@ -593,8 +593,10 @@ function getPokemon(e) {
         />
       </div>
       <div class="pokemonInfos">
+      <button type="Btn" id="close-btn" class="bg-gray-400 text-white p-2 rounded ">X</button>
         <h1>${capitalizeFirstLetter(data.name)}</h3>
         <p>Weight: ${data.weight}</p>
+        <p>Height: ${data.height}</p>
       </div>`;
     })
     .catch((err) => {
