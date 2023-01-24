@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| POKE Trainer Card |</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="grid grid-cols-1 bg-white h-16">
+        <a href="index.html" class="logo">pitch</a>
+    </header>
+
+
+    
+    <div id="formAndCardContainer" class="grid grid-cols-2 max-w-full justify-items-center rounded-md border-8 bg-gradient-to-r from-indigo-500 mx-72 mt-20 px-16 py-16 relative content-center"><!--Form and Card Containers-->
+      
+
+        <div id="pokeFormContainer" class="max-w-full justify-items-center rounded-md border-8  mx-18 my-18 px-16 py-16 relative bg-zinc-800 "><!--Form Container-->
+          <div class="card-body ">
+              <form id="trainerForm">
+                <h1 class="text-white text-xl font-normal font-sans -apple-system text-center">Trainer Information</h1>
+                  <div class="col-1">
+                    <div class="v">
+                      <label class="text-zinc-400 text-lg font-sans -apple-system" for="name">Name</label>
+                      <input type="text" class="form-input text-black text-xl font-normal font-sans -apple-system grid justify-self-end" name="name" placeholder="Enter name" />
+                    </div>
+        
+                    <div class="v">
+                      <label class="text-zinc-400 text-lg font-sans -apple-system" for="alias">Alias</label>
+                      <input type="text" class="form-input text-black text-xl font-normal font-sans -apple-system grid justify-self-end" name="alias" placeholder="Enter your Alias" />
+                    </div>
+      
+                    <div class="v">
+                      <label class="text-zinc-400 text-lg font-sans -apple-system" for="home-town">Home Town</label>
+                      <input type="text" class="form-input text-black text-xl font-normal font-sans -apple-system grid  justify-self-end" name="home-town" placeholder="Enter your Home Town" />
+                    </div>
+        
+                    <div class="v">
+                      <label class="text-zinc-400 text-lg font-sans -apple-system" for="favorite-pokemon">Favorite pokemon</label>
+                      <input type="text" class="form-input text-black text-xl font-normal font-sans -apple-system grid  justify-self-end" name="favorite-pokemon" placeholder="lowercase" />
+                    </div>
+                  </div>
+        
+                <button class= "btn btn-danger font-sans -apple-system text-md font-normal rounded-br-lg rounded-bl-lg text-white mb-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500   px-1 py-1  hover:from-pink-500 hover:to-yellow-500 ">Submit Form</button>
+              </form>
+          </div>
+        </div>
+      
+      
+      
+        <div id="trainerCard" class="max-w-full justify-items-center rounded-md border-8  mx-18 my-18 px-24 py-12 relative bg-zinc-800"><!--Card Container-->
+          <div class="text-center"><iconify-icon icon="mdi:pokeball" width="26" height="26"></iconify-icon><iconify-icon icon="mdi:pokeball" width="26" height="26"></iconify-icon><iconify-icon icon="mdi:pokeball" width="26" height="26"></iconify-icon></div>
+          <h2 class="text-white text-xl font-normal font-sans -apple-system grid">TRAINER CARD</h2>
+          <ul>
+            <li  class="text-zinc-400 text-lg font-sans -apple-system">Name<span id="trainerName" class="form-input text-black text-xl font-normal font-sans -apple-system grid  justify-self-end bg-gradient-to-r from-pink-700">Ash</span></li>
+            <li  class="text-zinc-400 text-lg font-sans -apple-system">Alias<span id="trainerAlias" class="form-input text-black text-xl font-normal font-sans -apple-system grid  justify-self-end bg-gradient-to-r from-pink-700">Ketchum</span></li>
+            <li  class="text-zinc-400 text-lg font-sans -apple-system">Home Town<span id="trainerHomeTown" class="form-input text-black text-xl font-normal font-sans -apple-system grid  justify-self-end bg-gradient-to-r from-pink-700">Pueblo Paleta</span></li>
+            <li  class="text-zinc-400 text-lg font-sans -apple-system">Favorite Pokemon<span id="trainerFavoritePokemon" class="form-input text-black text-xl font-normal font-sans -apple-system grid  justify-self-end bg-gradient-to-r from-pink-700">pikachu</span></li>
+          </ul>
+          <img id="trainerFavPokeImg" class=" mx-auto w-36 h-36 bg-slate-200">
+        </div>
+      
+      </div>
+      <!--End-->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script src=" ./assets/js/form.js"></script>
+</body>
+</html>
