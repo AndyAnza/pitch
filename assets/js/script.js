@@ -326,11 +326,11 @@ function randomFirePokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div class="flex justify-center items-center">
+            <div class="flex justify-left items-center">
                 <img src='${data.sprites.other["official-artwork"].front_default}'></img>
             </div>
             <div>
-                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
             </div>
             `;
         });
@@ -351,11 +351,11 @@ function randomGrassPokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div class="flex justify-center items-center">
-                <img src='${data.sprites.other["official-artwork"].front_default}'></img>
+            <div  class="flex justify-left items-center">
+                <img id="randomGrassPokemon" src='${data.sprites.other["official-artwork"].front_default}'></img>
             </div>
             <div>
-                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
             </div>
             `;
         });
@@ -376,11 +376,11 @@ function randomFlyingPokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div class="flex justify-center items-center">
+            <div class="flex justify-left items-center">
                 <img src='${data.sprites.other["official-artwork"].front_default}'></img>
             </div>
             <div>
-                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
             </div>
             `;
         });
@@ -401,11 +401,11 @@ function randomWaterPokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div class="flex justify-center items-center">
+            <div class="flex justify-left items-center">
                 <img src='${data.sprites.other["official-artwork"].front_default}'></img>
             </div>
             <div>
-                <h1 class="flex justify-center items-center text-white text-7xl">${data.name}</h1>
+                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
             </div>
             `;
         });
@@ -432,12 +432,13 @@ function startingPage() {
   document.querySelector("#startingPageContainer").innerHTML = `
     
     <div class="text-white absolute right-2/4 top-1/2" id="homePage">
-        <h1 class="text-5xl">Enter your birthdate to Discover your <br> Zodiac sign and Spirit Pokemon</h1>
+        <h1 id="wording" class="text-5xl">Enter your birthdate to Discover your <br> Zodiac sign and Spirit Pokemon</h1>
         <input id="calender" class="text-black m-5 rounded text-xl" type="date" id="start" name="trip-start" value="2018-07-22" min="1900-01-01" max="2023-01-25">
         <button onclick="ShowDiv()" id="EnterButton" class="bg-blue-800 text-xl py-1 px-4 rounded" type="button">Enter</button>
     </div>
     `;
 }
+
 
 startingPage();
 
@@ -526,30 +527,10 @@ fetch(
       mood.innerHTML = "Today's Horoscope: " + MoodValue;
 
       document.getElementById("AstrologyInfo").style.display = "none"; 
-    
-      switch(astro_sign) {
-        case "Taurus":
-        case "Virgo":
-        case "Capricorn":
-          randomGrassPokemon();
-          break;
-        case "Pisces":
-        case "Scorpio":
-        case "Cancer":
-          randomWaterPokemon();
-          break;
-        case "Libra":
-        case "Aquarius":
-        case "Gemini":
-          randomFlyingPokemon();
-          break;
-        case "Sagittarius":
-        case "Leo":
-        case "Aries":
-        default:
-          randomFirePokemon();
-          //break;
-      }
+      document.getElementById("wording").style.display = "";
+      document.getElementById("calender").style.display = "";
+      document.getElementById("EnterButton").style.display = "";
+      
     
     };
   })
@@ -557,6 +538,32 @@ fetch(
 console.log(astro_sign);
 function ShowDiv() {
   document.getElementById("AstrologyInfo").style.display = "";
+  document.getElementById("wording").style.display = "none";
+  document.getElementById("calender").style.display = "none";
+  document.getElementById("EnterButton").style.display = "none";
+  switch(astro_sign) {
+    case "Taurus":
+    case "Virgo":
+    case "Capricorn":
+      randomGrassPokemon();
+      break;
+    case "Pisces":
+    case "Scorpio":
+    case "Cancer":
+      randomWaterPokemon();
+      break;
+    case "Libra":
+    case "Aquarius":
+    case "Gemini":
+      randomFlyingPokemon();
+      break;
+    case "Sagittarius":
+    case "Leo":
+    case "Aries":
+    default:
+      randomFirePokemon();
+      //break;
+  }
 }
 
 //console.log (mood.innerHTML = "Mood: "+moodValue);
