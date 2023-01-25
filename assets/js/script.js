@@ -326,11 +326,10 @@ function randomFirePokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div class="flex justify-left items-center">
+            <div class="flex flex-col justify-center items-center">
+                <p class="text-white text-4xl">Element: Fire</p>
                 <img src='${data.sprites.other["official-artwork"].front_default}'></img>
-            </div>
-            <div>
-                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
+                <p class="text-white text-7xl">${data.name}</p>
             </div>
             `;
         });
@@ -351,11 +350,10 @@ function randomGrassPokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div  class="flex justify-left items-center">
-                <img id="randomGrassPokemon" src='${data.sprites.other["official-artwork"].front_default}'></img>
-            </div>
-            <div>
-                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
+            <div class="flex flex-col justify-center items-center">
+                <p class="text-white text-4xl">Element: Earth</p>
+                <img src='${data.sprites.other["official-artwork"].front_default}'></img>
+                <p class="text-white text-7xl">${data.name}</p>
             </div>
             `;
         });
@@ -376,11 +374,10 @@ function randomFlyingPokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div class="flex justify-left items-center">
+            <div class="flex flex-col justify-center items-center">
+                <p class="text-white text-4xl">Element: Air</p>
                 <img src='${data.sprites.other["official-artwork"].front_default}'></img>
-            </div>
-            <div>
-                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
+                <p class="text-white text-7xl">${data.name}</p>
             </div>
             `;
         });
@@ -401,11 +398,10 @@ function randomWaterPokemon() {
         .then((res) => res.json())
         .then((data) => {
           document.querySelector("#yourPokemonType").innerHTML = `
-            <div class="flex justify-left items-center">
-                <img src='${data.sprites.other["official-artwork"].front_default}'></img>
-            </div>
-            <div>
-                <h1 class="flex justify-left items-center text-white text-7xl">${data.name}</h1>
+            <div class="flex flex-col justify-center items-center">
+              <p class="text-white text-4xl">Element: Water</p>
+              <img src='${data.sprites.other["official-artwork"].front_default}'></img>
+              <p class="text-white text-7xl">${data.name}</p>
             </div>
             `;
         });
@@ -417,13 +413,7 @@ function randomWaterPokemon() {
 
 ////////////////////////////////////////DISCOVER YOUR ZODIAC SIGN AND SPIRIT POKEMON////////////////////////////////////////////////////////////
 
-/*function startingPage() {
-    document.querySelector("#startingPageContainer").innerHTML = `
-    
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png"/>
-    
-    `;
-}*/
+
 
 function startingPage() {
   document.body.style.backgroundImage = "url('assets/images/mew.jpg')";
@@ -539,8 +529,9 @@ console.log(astro_sign);
 function ShowDiv() {
   document.getElementById("AstrologyInfo").style.display = "";
   document.getElementById("wording").style.display = "none";
-  document.getElementById("calender").style.display = "none";
-  document.getElementById("EnterButton").style.display = "none";
+  document.getElementById("homePage").style.display = "none";
+  document.getElementById("zodiacAndPokemonInfo").style.backgroundColor = "black";
+  document.getElementById("zodiacAndPokemonInfo").style.padding = "100px";
   switch(astro_sign) {
     case "Taurus":
     case "Virgo":
@@ -562,7 +553,6 @@ function ShowDiv() {
     case "Aries":
     default:
       randomFirePokemon();
-      //break;
   }
 }
 
