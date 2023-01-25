@@ -496,6 +496,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
+    console.log(data);
     var signValue = data["compatibility"];
     var MoodValue = data["description"];
 
