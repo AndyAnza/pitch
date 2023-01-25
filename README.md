@@ -8,8 +8,11 @@ As bootcamp students, we want to develop this app on Pokemon and Zodiac signs in
 
 https://andyanza.github.io/pitch/
 
-## APIs
+## Technologies
 
+- CSS
+- Javascript
+- Tailwind
 - https://pokeapi.co/
 - https://aztro.readthedocs.io/en/latest/
 
