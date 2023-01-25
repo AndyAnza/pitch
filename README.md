@@ -23,11 +23,11 @@ You will have the option to search for a specific pokemon in the search bar:
 
 ![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/search%20bar.png)
 
-You will also have the option to enter you birthdate to discover your zodiac sign:
+You will also have the option to enter you birthdate to discover your zodiac sign and zodiac element. With that you will get your spirit pokemon based on the result of your zodiac element:
 
 ![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/zodiac%20sign%20and%20spirit%20pokemon.png)
 
-Additionally, you will have the option to Generate a list of six random Pokemon:
+Additionally, you will have the option to Generate a list of six random Pokemon that will be displayed with each image, name, id, weight and height:
 
 ![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/pokemon%20generator.png)
 
