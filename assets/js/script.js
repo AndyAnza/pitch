@@ -583,18 +583,26 @@ function getPokemon(e) {
     .then((response) => response.json())
     .then((data) => {
       document.querySelector(".pokemonBox").innerHTML = `
-      <div>
+      <div id="pokeimage">
         <img
           src="${data.sprites.other["official-artwork"].front_default}"
           alt="Pokemon name"
         />
       </div>
-      <div class="pokemonInfos">
-      <button type="Btn" id="close-btn" class="bg-gray-400 text-white p-2 rounded ">X</button>
+      <div class="pokemonInfos" id="PokeInfo">
+      <button type="Btn" id="closebtn" class="bg-gray-400 text-white p-2 rounded " display:"none">X</button>
         <h1>${capitalizeFirstLetter(data.name)}</h3>
         <p>Weight: ${data.weight}</p>
         <p>Height: ${data.height}</p>
       </div>`;
+      document.getElementById("homePage").style.display = "none";
+      function closePokemon() {
+        document.getElementById("pokeimage").style.display = "none";
+        document.getElementById("PokeInfo").style.display = "none";
+        document.getElementById("closebtn").style.display = "none";
+      }
+      let closePokeButton = document.getElementById("closebtn");
+      closePokeButton.addEventListener("click", closePokemon);
     })
     .catch((err) => {
       document.querySelector(".pokemonBox").innerHTML = `
@@ -604,5 +612,9 @@ function getPokemon(e) {
     }); //console.log if pokemon not found or given ana error
 
   e.preventDefault();
+  
 }
+
+
+
 //SEARCH API ENDS HERE//
