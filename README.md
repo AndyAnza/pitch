@@ -15,33 +15,35 @@ N/A
 ## Usage
 
 The Pitch website is very easy to use. You can access it from any browser.
-When you access the deproyed version, you will see the following page:
+When you access the deployed version, you will see the following page:
 
-IMAGE
+![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/home%20page.png)
 
 You will have the option to search for a specific pokemon in the search bar:
 
-IMAGE OF THE SEARCH BAR
+![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/search%20bar.png)
 
 You will also have the option to enter you birthdate to discover your zodiac sign:
 
-IMAGE OF THE CALENDAR
+![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/zodiac%20sign%20and%20spirit%20pokemon.png)
 
-Additionally, you will have the option to Generate a list of Pokemons:
+Additionally, you will have the option to Generate a list of six random Pokemon:
 
-IMAGE OF THE GENERATE POKEMONS BUTTON
+![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/pokemon%20generator.png)
 
-Finally, you will also have the option to...
+Finally, you will also have the option to generate your own trainer card:
+
+![alt text](https://github.com/AndyAnza/pitch/blob/cfde687340e75f8ee17b58a138b2858ddf4abf4f/assets/images/trainer%20card.png)
 
 ## Credits
 
 This project was planned, developed and deployed by the following team members:
 
-Andrea R. Anza
-Brayan Aguirre
-Luis D
-Bladimir Reveron
-Aaron Agraz
+- Andrea R. Anza
+- Brayan Aguirre
+- Luis D
+- Bladimir Reveron
+- Aaron Agraz
 
 ## License
 
