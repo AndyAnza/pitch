@@ -444,7 +444,7 @@ function zodiac_sign(day, month) {
     if (day < 22) astro_sign = "Sagittarius";
     else astro_sign = "capricorn";
   } else if (month == 01) {
-    if (day < 20) astro_sign = "Capricorn";
+    if (day < 20) astro_sign = "capricorn";
     else astro_sign = "aquarius";
   } else if (month == 02) {
     if (day < 19) astro_sign = "Aquarius";
@@ -504,9 +504,11 @@ fetch(
       let date = input.value;
       console.log(date);
 
+      
+
       // perform additional actions here
-      let day = input.value[(8, 9)]; //document.getElementById('calender').value[8,9]; //this needs to be linked to the value day input in the calendar
-      let month = input.value[(5, 6)]; //document.getElementById('calender').value[5,6]; //this needs to be linked to the value month input in the calendar
+      let day = input.value[8] + input.value[9]; //document.getElementById('calender').value[8,9]; //this needs to be linked to the value day input in the calendar
+      let month = input.value[5] + input.value[6]; //document.getElementById('calender').value[5,6]; //this needs to be linked to the value month input in the calendar
       zodiac_sign(day, month);
 
       console.log(input.value[8] + input.value[9]);
